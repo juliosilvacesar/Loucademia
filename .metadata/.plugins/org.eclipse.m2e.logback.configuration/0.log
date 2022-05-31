@@ -1,0 +1,3 @@
+2022-05-30 21:08:14,383 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-05-30 21:10:58,270 [Worker-2: https://downloads.apache.org/geronimo/eclipse/updates/content.jar] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {s}->https://downloads.apache.org:443
+2022-05-30 21:10:58,270 [Worker-11: https://download.eclipse.org/jetty/updates/jetty-wtp/site.xml] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {s}->https://download.eclipse.org:443
