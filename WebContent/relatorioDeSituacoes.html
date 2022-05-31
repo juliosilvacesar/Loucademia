@@ -1,0 +1,80 @@
+<!-- Cabeçalho - Início -->
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Loucademia</title>
+	</head>
+	<body>
+		<header>
+			<img  src="images/Loucademia_Logotipo.png">			
+			<nav>
+				<div>
+					<a href="novoAluno.html">Novo Aluno</a><br>
+					<a href="pesquisaDeAluno.html">Pesquisa de aluno</a><br>
+					<a href="controleDeAcesso.html">Controle de acesso</a><br>
+					<a href="relatorioDeEntradaSaida.html">Relatório de Entrada e Saída</a><br>
+					<a href="relatorioDeSituacoes.html">Relatório de Situação</a><br>
+				</div>			
+			</nav>			
+		</header>
+		<!-- Cabeçalho - Fim -->
+		
+		<h1>Relatório de Situação</h1>
+		<div id="infoMessage">
+			(Aqui vai eventual mensagem de sucesso ou erro)		
+		</div>
+		
+		<br>
+		
+		<form>
+			<fieldset>
+				<legend>Parâmetros da Pesquisa</legend>
+				<label for="situacao">Situação</label><br>
+				<select name="situacao" id="situacao">
+					<option>Ativo</option>
+					<option>Inativo</option>
+					<option>Com pendências</option>
+				</select>					
+			</fieldset>
+			
+			<br>
+			
+			<input type="submit" value="Gerar relatório">			
+		</form>
+		
+		<table>
+			<tr>
+				<th>ID</th>	
+				<th>Nome</th>
+				<th>Situação</th>
+				<th>Celular</th>
+				<th>Fixo</th>
+				<th>Ações</th>	
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Carlo</td>
+				<td>Com pendências</td>
+				<td>41 1234-5678</td>
+				<td>41 1234-5678</td>
+				<td>
+					<input type="button" value="Editar">
+				</td>
+			</tr>		
+			<tr>
+				<td>2</td>
+				<td>Ana</td>
+				<td>Com pendências</td>
+				<td>41 1234-5678</td>
+				<td>41 1234-5678</td>
+				<td>
+					<input type="button" value="Editar">
+				</td>
+			</tr>	
+		</table>
+		
+	<!-- Rodapé - Início -->
+	</body>
+</html>
+<!-- Rodapé - Fim -->
