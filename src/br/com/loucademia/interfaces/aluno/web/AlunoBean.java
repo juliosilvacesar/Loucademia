@@ -1,4 +1,4 @@
-package br.com.loucademia.interfaces.web;
+package br.com.loucademia.interfaces.aluno.web;
 
 import java.io.Serializable;
 
@@ -19,6 +19,11 @@ public class AlunoBean implements Serializable{
 
 	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
+	}
+	
+	public String gravar() {
+		System.out.println("ALUNO ==>" + aluno);
+		return null;
 	}
 
 }
