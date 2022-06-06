@@ -25,7 +25,7 @@ public class AlunoService {
 
 	private void create(Aluno aluno) throws ValidationException {
 		Validation.assertNotEmpty(aluno);
-		
+
 		String maxMatricula = alunoRepository.getMaxMatriculaAno();
 		aluno.gerarMatricula(maxMatricula);
 		alunoRepository.store(aluno);
@@ -37,6 +37,10 @@ public class AlunoService {
 		Validation.assertNotEmpty(aluno.getMatricula());
 		alunoRepository.update(aluno);
 
+	}
+
+	public Aluno findByMatricula(String matricula) {
+		return alunoRepository.findByMatricula(matricula);
 	}
 
 }
