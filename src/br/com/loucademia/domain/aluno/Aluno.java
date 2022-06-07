@@ -13,58 +13,58 @@ import javax.persistence.Table;
 
 import br.com.loucademia.application.util.StringUtils;
 
-
 @Entity
 @Table(name = "ALUNO")
 public class Aluno implements Serializable {
 
 	public enum Sexo {
-		Masculino, Feminino, Outros;
+		Masculino, Feminino;
 	}
 
 	public enum Situacao {
 		Ativo, Inativo, Pendente;
 	}
-	
+
 	@Id
 	@Column(name = "ID", nullable = false, length = 8)
 	private String matricula;
-	
+
 	@Column(name = "NOME", nullable = false, length = 64)
 	private String nome;
-	
+
 	@Enumerated
 	@Column(name = "SEXO", nullable = false, length = 1)
 	private Sexo sexo;
-	
+
 	@Column(name = "RG", nullable = false, length = 10)
 	private Integer rg;
 
 	@Column(name = "NASCIMENTO", nullable = false)
 	private LocalDate dataNascimento;
-	
+
 	@Enumerated
-	@Column(name = "SITUACAO", nullable = false)
+	@Column(name = "SITUACAO", nullable = false, length = 1)
 	private Situacao situacao;
-	
-	@Column(name = "EMAIL", nullable = false, length = 64)
+
+	@Column(name = "EMAIL", nullable = true, length = 64)
 	private String email;
-	
+
 	@Embedded
 	private Endereco endereco = new Endereco();
-	
+
 	@Embedded
 	private Telefone telefone = new Telefone();
-	
+
 	public void gerarMatricula(String maxMatricula) {
 		Year year = Year.now();
-		
-		if(maxMatricula == null) {
+
+		if (maxMatricula == null) {
 			maxMatricula = year + StringUtils.leftZeroes(0, 4);
 		}
-		
+
 		int sequential = Integer.parseInt(maxMatricula.substring(4));
 		sequential++;
+
 		this.matricula = year + StringUtils.leftZeroes(sequential, 4);
 	}
 
@@ -171,5 +171,4 @@ public class Aluno implements Serializable {
 			return false;
 		return true;
 	}
-
 }

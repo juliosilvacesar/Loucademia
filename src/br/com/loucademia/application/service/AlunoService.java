@@ -1,5 +1,7 @@
 package br.com.loucademia.application.service;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
@@ -15,7 +17,7 @@ public class AlunoService {
 	@EJB
 	private AlunoRepository alunoRepository;
 
-	public void createOrUpdate(Aluno aluno) throws ValidationException {
+	public void createOrUpdate(Aluno aluno) {
 		if (StringUtils.isEmpty(aluno.getMatricula())) {
 			create(aluno);
 		} else {
@@ -23,7 +25,7 @@ public class AlunoService {
 		}
 	}
 
-	private void create(Aluno aluno) throws ValidationException {
+	private void create(Aluno aluno) {
 		Validation.assertNotEmpty(aluno);
 
 		String maxMatricula = alunoRepository.getMaxMatriculaAno();
@@ -32,7 +34,11 @@ public class AlunoService {
 
 	}
 
-	private void update(Aluno aluno) throws ValidationException {
+	public void delete(String matricula) {
+		alunoRepository.delete(matricula);
+	}
+
+	private void update(Aluno aluno) {
 		Validation.assertNotEmpty(aluno);
 		Validation.assertNotEmpty(aluno.getMatricula());
 		alunoRepository.update(aluno);
@@ -43,4 +49,11 @@ public class AlunoService {
 		return alunoRepository.findByMatricula(matricula);
 	}
 
+	public List<Aluno> listAlunos(String matricula, String nome, Integer rg, Integer telefone) {
+		if (StringUtils.isEmpty(matricula) && StringUtils.isEmpty(nome) && rg == null && telefone == null) {
+			throw new ValidationException("Pelo menos um critério de pesquisa deve ser fornecido");
+		}
+
+		return alunoRepository.listAlunos(matricula, nome, rg, telefone);
+	}
 }

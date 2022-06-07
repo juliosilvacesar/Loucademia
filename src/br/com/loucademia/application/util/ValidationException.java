@@ -1,6 +1,9 @@
 package br.com.loucademia.application.util;
 
-public class ValidationException extends Exception {
+import javax.ejb.ApplicationException;
+
+@ApplicationException
+public class ValidationException extends RuntimeException {
 
 	public ValidationException() {
 		

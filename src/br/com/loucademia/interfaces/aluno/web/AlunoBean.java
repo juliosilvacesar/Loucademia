@@ -11,7 +11,6 @@ import javax.inject.Named;
 
 import br.com.loucademia.application.service.AlunoService;
 import br.com.loucademia.application.util.StringUtils;
-import br.com.loucademia.application.util.ValidationException;
 import br.com.loucademia.domain.aluno.Aluno;
 
 @Named
@@ -20,14 +19,14 @@ public class AlunoBean implements Serializable {
 
 	@EJB
 	private AlunoService alunoService;
-	
+
 	@Inject
 	private FacesContext facesContext;
-	
+
 	private Aluno aluno = new Aluno();
 
 	private String matricula;
-	
+
 	private String titulo = "Novo aluno";
 
 	public void carregar() {
@@ -57,7 +56,7 @@ public class AlunoBean implements Serializable {
 		this.aluno = aluno;
 	}
 
-	public String gravar() throws ValidationException {
+	public String gravar() {
 		alunoService.createOrUpdate(aluno);
 		facesContext.addMessage(null, new FacesMessage("Dados gravados com sucesso"));
 		return null;
