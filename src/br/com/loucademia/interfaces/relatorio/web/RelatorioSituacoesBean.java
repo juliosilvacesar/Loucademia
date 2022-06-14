@@ -23,7 +23,7 @@ public class RelatorioSituacoesBean implements Serializable {
 	private List<Aluno> alunos;
 	
 	public String gerarRelatorio() {
-		alunos	= alunoService.listSituacoesAluno(situacao);
+		alunos	= alunoService.listSituacoesAlunos(situacao);
 		return null;
 	}
 
