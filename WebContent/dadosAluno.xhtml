@@ -24,7 +24,7 @@
 			<br />
 			
 			<form jsf:id="form">
-				<input type="hidden" jsf:values="#{alunoBean.aluno.matricula}" />
+				<input type="hidden" jsf:value="#{alunoBean.aluno.matricula}" />
 				<fieldset>
 					<legend>Dados Pessoais</legend>
 					<label for="nome">Nome</label><br />
@@ -125,8 +125,8 @@
 				</fieldset>
 				
 				<br />
-				<input type="submit" value="Gravar" jsf:action="#{alunoBean.gravar}" />
-				<input type="button" value="Relatório de acessos" />		
+				<input type="submit" value="Gravar" jsf:action="#{alunoBean.gravar}" />&#160;
+				<input type="button" value="Relatório de entradas e saídas" jsf:outcome="relatorioDeEntradaSaida?matricula=#{alunoBean.aluno.matricula}" />		
 			
 			</form>
 		</ui:define>

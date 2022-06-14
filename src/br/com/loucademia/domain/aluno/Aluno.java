@@ -69,6 +69,7 @@ public class Aluno implements Serializable {
 	}
 
 	public String getMatricula() {
+		
 		return matricula;
 	}
 
