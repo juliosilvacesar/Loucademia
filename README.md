@@ -1,0 +1,1 @@
+# Loucademia é um sistema criado com apoio da https://www.softblue.com.br/profile/authenticate/redirect/to/registration/scores, e hoje tem sido meu maior projeto de aplicação e entendimento de tecnologia.
